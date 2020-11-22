@@ -13,6 +13,24 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@angular/fire",
+              "@angular/fire/auth",
+              "@angular/fire/app",
+              "@angular/fire/database",
+              "@firebase",
+              "@angular/fire",
+              "@angular/fire/firestore",
+              "firebase",
+              "@firebase/auth",
+              "@firebase/app",
+              "@firebase/database",
+              "@firebase/firestore",
+              "@firebase/functions",
+              "@firebase/performance",
+              "@firebase/remote-config",
+              "@firebase/component"
+            ],
             "outputPath": "dist/chatFirebase",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -24,9 +42,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -79,6 +103,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "codeCoverage": true,
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -88,9 +113,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {
@@ -119,6 +150,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chatFirebase"
+    }
+  },
+  "defaultProject": "chatFirebase",
+  "cli": {
+    "analytics": "c7e04bd0-57fc-4d52-b41c-83217304563d"
+  }
 }
